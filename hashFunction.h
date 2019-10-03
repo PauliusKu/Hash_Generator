@@ -8,9 +8,9 @@
 #include <string>
 #include <vector>
 
-std::vector<unsigned int> convertStringToInt(std::string& pInp);
-std::vector<std::vector<unsigned int>> makeBlocks(std::vector<unsigned int>& pInp);
-std::vector<unsigned int> hashFunc(std::vector<unsigned int>& pInp1, std::vector<unsigned int>& pInp2);
-std::vector<unsigned int> hashAlgo(std::vector<std::vector<unsigned int>>& pInpBlocks);
+std::string hexToString(unsigned int n);
+std::string hashFunc(std::string& pBlock1, const std::string& pBlock2);
+std::vector<std::string> makeBlocks(const std::string& pInp1);
+std::string hashAlgo(const std::string& pInp1);
 
 #endif //HASH_GENERATOR_HASHFUNCTION_H
