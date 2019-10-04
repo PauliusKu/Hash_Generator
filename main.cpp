@@ -6,7 +6,7 @@ void readConsole();
 int main() {
     int input{};
 
-    while(true){
+    do{
         std::cin >> input;
         switch (input){
             case 0:
@@ -35,7 +35,7 @@ int main() {
             default:
                 return 0;
         }
-    }
+    }while(true);
 }
 
 void readConsole(){

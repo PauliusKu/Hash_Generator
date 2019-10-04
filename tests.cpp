@@ -4,11 +4,13 @@
 
 #include "tests.h"
 
+#define TEST_FILES "../testFiles/"
+
 void oneSymb(){
     std::string line;
     std::ifstream myfile;
 
-    myfile.open (R"(C:\Users\Paulius\CLionProjects\Hash_Generator\testFiles\oneSymb1.txt)");
+    myfile.open (TEST_FILES "oneSymb1.txt");
     if (myfile.is_open()){
         while (getline(myfile, line))
             std::cout << hashAlgo(line) << std::endl;
@@ -16,7 +18,7 @@ void oneSymb(){
     }
     myfile.close();
 
-    myfile.open (R"(C:\Users\Paulius\CLionProjects\Hash_Generator\testFiles\oneSymb2.txt)");
+    myfile.open (TEST_FILES "oneSymb2.txt");
     if (myfile.is_open()){
         while (getline(myfile, line))
             std::cout << hashAlgo(line) << std::endl;
@@ -29,7 +31,7 @@ void bigString(){
     std::string line;
     std::ifstream myfile;
 
-    myfile.open (R"(C:\Users\Paulius\CLionProjects\Hash_Generator\testFiles\bigString1.txt)");
+    myfile.open (TEST_FILES "bigString1.txt");
     if (myfile.is_open()){
         while (getline(myfile, line))
             std::cout << hashAlgo(line) << std::endl;
@@ -37,7 +39,7 @@ void bigString(){
     }
     myfile.close();
 
-    myfile.open (R"(C:\Users\Paulius\CLionProjects\Hash_Generator\testFiles\bigString2.txt)");
+    myfile.open (TEST_FILES "bigString2.txt");
     if (myfile.is_open()){
         while (getline(myfile, line))
             std::cout << hashAlgo(line) << std::endl;
@@ -50,7 +52,7 @@ void oneDif(){
     std::string line;
     std::ifstream myfile;
 
-    myfile.open (R"(C:\Users\Paulius\CLionProjects\Hash_Generator\testFiles\oneDif1.txt)");
+    myfile.open (TEST_FILES "oneDif1.txt");
     if (myfile.is_open()){
         while (getline(myfile, line))
             std::cout << hashAlgo(line) << std::endl;
@@ -58,7 +60,7 @@ void oneDif(){
     }
     myfile.close();
 
-    myfile.open (R"(C:\Users\Paulius\CLionProjects\Hash_Generator\testFiles\oneDif2.txt)");
+    myfile.open (TEST_FILES "oneDif2.txt");
     if (myfile.is_open()){
         while (getline(myfile, line))
             std::cout << hashAlgo(line) << std::endl;
@@ -73,7 +75,7 @@ void konstitucija(){
     std::vector <std::string> inputs{};
     double elapsed{};
 
-    myfile.open (R"(C:\Users\Paulius\CLionProjects\Hash_Generator\testFiles\konstitucija.txt)");
+    myfile.open (TEST_FILES "konstitucija.txt");
     if (myfile.is_open()){
         while (getline(myfile, line))
             inputs.push_back(line);
