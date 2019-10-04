@@ -33,16 +33,16 @@ std::string hashAlgo(const std::string& pInp1){
 ```
 ## Test Results
 
- |Num|Test|Result|
- |--|-----|-------|
- |1|One symbol collision|OK|
- |2|10000 collision|OK|
- |3|10000 one diff collision|OK|
- |4|Time to hash konstitucija.txt|~0.13s|
- |5|100000 random pairs collision|OK|
- |6|100000 random one diff pairs collision|OK|
- |7|Minimum percentage of bitwise difference|37%|
- |8|Maximum percentage of bitwise difference|100%|
- |9|Average percentage of bitwise difference|92%|
+ |Num|Test|Result 32-bit|Result 96-bit|
+ |--|-----|-------|-------------|
+ |1|One symbol collision|OK|OK|
+ |2|10000 collision|OK|OK|
+ |3|10000 one diff collision|OK|OK|
+ |4|Time to hash konstitucija.txt|~0.13s|~0.58s|
+ |5|100000 random pairs collision|OK|OK|
+ |6|100000 random one diff pairs collision|OK|OK|
+ |7|Minimum percentage of bitwise difference|37%|41%|
+ |8|Maximum percentage of bitwise difference|100%|100%|
+ |9|Average percentage of bitwise difference|92%|92%|
  
 ## Instal instructions
