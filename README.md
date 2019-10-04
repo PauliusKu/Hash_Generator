@@ -41,5 +41,8 @@ std::string hashAlgo(const std::string& pInp1){
  |4|Time to hash konstitucija.txt|~0.13s|
  |5|100000 random pairs collision|OK|
  |6|100000 random one diff pairs collision|OK|
+ |7|Minimum percentage of bitwise difference|37%|
+ |8|Maximum percentage of bitwise difference|100%|
+ |9|Average percentage of bitwise difference|92%|
  
 ## Instal instructions
