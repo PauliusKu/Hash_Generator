@@ -18,5 +18,6 @@ void oneDif();
 void konstitucija();
 void pairManyDif();
 void pairOneDif();
+void pairOneDifStat();
 
 #endif //HASH_GENERATOR_TESTS_H

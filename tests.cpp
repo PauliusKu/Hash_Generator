@@ -134,3 +134,47 @@ void pairOneDif(){
     }
     std::cout << "End of test" << std::endl;
 }
+
+void pairOneDifStat(){
+    std::string first{};
+    std::string second{};
+
+    unsigned long numOfItr = 100000;
+    unsigned long diff {};
+    unsigned long max = 0;
+    unsigned long min = 10;
+    unsigned long sum = 0;
+
+    for (unsigned int i = 0; i < numOfItr; i++){
+        first = randomString(5);
+        second = first;
+        second[randomNum(0, 4)] = randomString(1)[0];
+
+        if (first != second) {
+            first = hashAlgo(first);
+            second = hashAlgo(second);
+
+            if (first == second)
+                std::cout << "Very bad " << first << " " << second << std::endl;
+
+            diff = 0;
+            for(unsigned long j = 0; j < first.size(); j++){
+                if (first[j] != second[j])
+                    diff++;
+            }
+
+            if (diff > max)
+                max = diff;
+            if (diff < min)
+                min = diff;
+            sum += diff;
+        } else i++;
+    }
+
+
+    std::cout << "Results: " << std::endl;
+    std::cout << "Max diff: " << max * 100 / 8 << std::endl;
+    std::cout << "Min diff: " << min * 100 / 8 << std::endl;
+    std::cout << "Average diff: " << double(sum  * 100 / 8 / numOfItr) << std::endl;
+    std::cout << "End of test" << std::endl;
+}

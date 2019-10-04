@@ -30,6 +30,9 @@ int main() {
             case 6:
                 pairOneDif();
                 break;
+            case 7:
+                pairOneDifStat();
+                break;
             case 9:
                 return 0;
             default:
