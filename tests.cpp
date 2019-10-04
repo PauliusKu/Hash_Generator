@@ -173,8 +173,8 @@ void pairOneDifStat(){
 
 
     std::cout << "Results: " << std::endl;
-    std::cout << "Max diff: " << max * 100 / 8 << std::endl;
-    std::cout << "Min diff: " << min * 100 / 8 << std::endl;
-    std::cout << "Average diff: " << double(sum  * 100 / 8 / numOfItr) << std::endl;
+    std::cout << "Max diff: " << max * 100 / first.size() << std::endl;
+    std::cout << "Min diff: " << min * 100 / first.size() << std::endl;
+    std::cout << "Average diff: " << double(sum  * 100 / first.size() / numOfItr) << std::endl;
     std::cout << "End of test" << std::endl;
 }

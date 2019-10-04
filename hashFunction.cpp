@@ -22,19 +22,35 @@ std::vector<std::string> makeBlocks(const std::string& pInp1){
     return blocks;
 }
 
-std::string hashFunc(std::string& pBlock1, const std::string& pBlock2){
+std::string hashFunc(std::string pBlock){
     unsigned int hash = 0xAAAAAAAA;
     unsigned long i = 0;
 
-    pBlock1 += pBlock2;
-
-    for (i = 0; i < pBlock1.size(); ++pBlock1[i], ++i){
+    for (i = 0; i < pBlock.size(); ++pBlock[i], ++i){
         if ((i & 1u) == 0)
-            hash ^= hash << 7u ^ (pBlock1[i]) * (hash >> 3u);
-        else hash ^= ~((hash << 11u) + ((pBlock1[i] + 0u) ^ (hash >> 5u)));
+            hash ^= hash << 7u ^ (pBlock[i]) * (hash >> 3u);
+        else hash ^= ~((hash << 11u) + ((pBlock[i] + 0u) ^ (hash >> 5u)));
     }
 
     return hexToString(hash);
+}
+
+std::string hashFunc32(std::string& pBlock1, std::string& pBlock2){
+    return hashFunc(pBlock1 + pBlock2);
+}
+
+std::string hashFunc96(std::string& pBlock1, std::string& pBlock2){
+    std::string pBlockSum = hashFunc(pBlock1 + pBlock2);
+    pBlock1 = hashFunc(pBlock1);
+    pBlock2 = hashFunc(pBlock2);
+    pBlock1 = hashFunc(pBlock1 + pBlock2);
+    pBlock2 = hashFunc(pBlock1 + pBlockSum);
+
+    return pBlockSum + pBlock1 + pBlock2;
+}
+
+std::string hashFunc(std::string& pBlock1, std::string& pBlock2){
+    return hashFunc96(pBlock1, pBlock2);
 }
 
 std::string hexToString(unsigned int hex){
