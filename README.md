@@ -33,7 +33,7 @@ std::string hashAlgo(const std::string& pInp1){
 ```
 ## Test Results
 
- |Num|Test|Result 32-bit|Result 96-bit|
+ |Num|Test|Result 32-byte|Result 96-byte|
  |--|-----|-------|-------------|
  |1|One symbol collision|OK|OK|
  |2|10000 collision|OK|OK|
